@@ -4,74 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J1/j1a1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J1/j1a2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J1/j1a3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J1/j1a4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J1/j1a5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J1/j1a6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C13.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C14.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C16.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C17.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C18.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C19.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C9.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/j2A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J2/j2B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J3/ComplexNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J3/Fraction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J3/Interval.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J3/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J3/Polynomial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J3/QuadraticEquation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J3/Triangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/J3/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J3/Quadrilateral.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/J2/J2C/J2C12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/J3/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/J3/Triangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;amikot3033&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amikot3033/UshakovaJava.git&quot;,
+    &quot;accountId&quot;: &quot;1d8cdea7-036f-4eee-9167-edf68cf355c7&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2qH5viuQa9lIjupVQuxhpqThgsE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Circle.executor": "Run",
+    "Application.ComplexNumber.executor": "Run",
+    "Application.J2C12.executor": "Run",
+    "Application.Point.executor": "Run",
+    "Application.Quadrilateral.executor": "Run",
+    "Application.Triangle.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/J3",
     "onboarding.tips.debug.path": "C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/org/example/Main.java"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -91,7 +87,20 @@
       <option name="presentableId" value="Default" />
       <updated>1734306895264</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <option name="closed" value="true" />
+      <created>1734319969472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734319969472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

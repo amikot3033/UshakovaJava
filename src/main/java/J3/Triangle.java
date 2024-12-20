@@ -1,102 +1,134 @@
 package J3;
 import java.util.*;
 
-class TrPoint {
-    double x, y;
-
-    public TrPoint(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    public static double distance(TrPoint p1, TrPoint p2) {
-        return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
-    }
-}
+import java.util.*;
 
 class Triangle {
-    TrPoint a, b, c;
+    double a, b, c;
+    double angleA, angleB, angleC;
 
-    public Triangle(TrPoint a, TrPoint b, TrPoint c) {
+    public Triangle(double a, double b, double c, double angleA, double angleB, double angleC) {
         this.a = a;
         this.b = b;
         this.c = c;
+        this.angleA = angleA;
+        this.angleB = angleB;
+        this.angleC = angleC;
     }
 
-    public double getPerimeter() {
-        double ab = TrPoint.distance(a, b);
-        double bc = TrPoint.distance(b, c);
-        double ca = TrPoint.distance(c, a);
-        return ab + bc + ca;
+    //периметр
+    public double perimeter() {
+        return a + b + c;
     }
 
-    public double getArea() {
-        double ab = TrPoint.distance(a, b);
-        double bc = TrPoint.distance(b, c);
-        double ca = TrPoint.distance(c, a);
-        double s = getPerimeter() / 2;
-        return Math.sqrt(s * (s - ab) * (s - bc) * (s - ca));
+    // площадь
+    public double area() {
+        double s = perimeter() / 2; // полупериметр
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
     }
 
-    public String getType() {
-        double ab = TrPoint.distance(a, b);
-        double bc = TrPoint.distance(b, c);
-        double ca = TrPoint.distance(c, a);
-
-        if (ab == bc && bc == ca) {
-            return "Равносторонний";
-        } else if (ab == bc || bc == ca || ca == ab) {
-            return "Равнобедренный";
-        } else if (isRightAngle(ab, bc, ca)) {
-            return "Прямоугольный";
+    //тип треугольника
+    public String triangleType() {
+        if (a == b && b == c) {
+            return "Equilateral";
+        } else if (a == b || b == c || a == c) {
+            return "Isosceles";
+        } else if (angleA == 90 || angleB == 90 || angleC == 90) {
+            return "Right-angled";
         } else {
-            return "Произвольный";
+            return "Scalene";
         }
     }
 
-    private boolean isRightAngle(double ab, double bc, double ca) {
-        double[] sides = {ab, bc, ca};
-        Arrays.sort(sides);
-        return Math.abs(sides[2] * sides[2] - (sides[0] * sides[0] + sides[1] * sides[1])) < 1e-6;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Triangle[(%.2f, %.2f), (%.2f, %.2f), (%.2f, %.2f)]", a.x, a.y, b.x, b.y, c.x, c.y);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        List<Triangle> triangles = new ArrayList<>();
-
-        // Пример добавления треугольников
-        triangles.add(new Triangle(new TrPoint(0, 0), new TrPoint(4, 0), new TrPoint(2, Math.sqrt(12)))); // Равносторонний
-        triangles.add(new Triangle(new TrPoint(0, 0), new TrPoint(4, 0), new TrPoint(4, 3))); // Прямоугольный
-        triangles.add(new Triangle(new TrPoint(0, 0), new TrPoint(4, 0), new TrPoint(2, 2))); // Произвольный
-        triangles.add(new Triangle(new TrPoint(0, 0), new TrPoint(2, 0), new TrPoint(1, Math.sqrt(3)))); // Равнобедренный
-
-        Map<String, List<Triangle>> groupedTriangles = new HashMap<>();
+    public static Triangle findMaxArea(List<Triangle> triangles) {
+        Triangle max = triangles.get(0);
 
         for (Triangle t : triangles) {
-            groupedTriangles.computeIfAbsent(t.getType(), k -> new ArrayList<>()).add(t);
+            if (t.area() > max.area()) {
+                max = t;
+            }
+        }
+        return max;
+    }
+
+    public static Triangle findMinArea(List<Triangle> triangles) {
+        Triangle min = triangles.get(0);
+
+        for (Triangle t : triangles) {
+            if (t.area() < min.area()) {
+                min = t;
+            }
+        }
+        return min;
+    }
+
+    public static Triangle findMaxPer(List<Triangle> triangles) {
+        Triangle max = triangles.get(0);
+
+        for (Triangle t : triangles) {
+            if (t.perimeter() > max.perimeter()) {
+                max = t;
+            }
+        }
+        return max;
+    }
+
+    public static Triangle findMinPer(List<Triangle> triangles) {
+        Triangle min = triangles.get(0);
+
+        for (Triangle t : triangles) {
+            if (t.perimeter() < min.perimeter()) {
+                min = t;
+            }
+        }
+        return min;
+    }
+
+    public static void main(String[] args) {
+        // Создание списка треугольников
+        List<Triangle> triangles = new ArrayList<>();
+        triangles.add(new Triangle(3, 4, 5, 90, 60, 30)); // прямоугольный
+        triangles.add(new Triangle(3, 4, 5, 90, 60, 30)); // прямоугольный
+        triangles.add(new Triangle(5, 6, 7, 90, 60, 30)); // прямоугольный
+        triangles.add(new Triangle(5, 5, 8, 45, 45, 90));
+        triangles.add(new Triangle(5, 5, 9, 45, 45, 90));// равнобедренный
+        triangles.add(new Triangle(6, 6, 6, 60, 60, 60)); // равносторонний
+        triangles.add(new Triangle(7, 8, 10, 50, 60, 70)); // произвольный
+
+        // Разделение треугольников на разные списки по типу
+        Map<String, List<Triangle>> groupedTriangles = new HashMap<>();
+        for (Triangle t : triangles) {
+            String type = t.triangleType();
+            groupedTriangles.putIfAbsent(type, new ArrayList<>());
+            groupedTriangles.get(type).add(t);
         }
 
+        // Поиск максимального по площади треугольника в каждом типе
         for (Map.Entry<String, List<Triangle>> entry : groupedTriangles.entrySet()) {
             String type = entry.getKey();
-            List<Triangle> group = entry.getValue();
+            List<Triangle> typeTriangles = entry.getValue();
 
-            Triangle maxAreaTriangle = Collections.max(group, Comparator.comparingDouble(Triangle::getArea));
-            Triangle minAreaTriangle = Collections.min(group, Comparator.comparingDouble(Triangle::getArea));
-            Triangle maxPerimeterTriangle = Collections.max(group, Comparator.comparingDouble(Triangle::getPerimeter));
-            Triangle minPerimeterTriangle = Collections.min(group, Comparator.comparingDouble(Triangle::getPerimeter));
+            Triangle maxAreaTriangle = Triangle.findMaxArea(typeTriangles);
+            Triangle maxPerTriangle = Triangle.findMaxPer(typeTriangles);
 
-            System.out.printf("Тип: %s\n", type);
-            System.out.printf("Количество: %d\n", group.size());
-            System.out.printf("Максимальная площадь: %.2f (%s)\n", maxAreaTriangle.getArea(), maxAreaTriangle);
-            System.out.printf("Минимальная площадь: %.2f (%s)\n", minAreaTriangle.getArea(), minAreaTriangle);
-            System.out.printf("Максимальный периметр: %.2f (%s)\n", maxPerimeterTriangle.getPerimeter(), maxPerimeterTriangle);
-            System.out.printf("Минимальный периметр: %.2f (%s)\n\n", minPerimeterTriangle.getPerimeter(), minPerimeterTriangle);
+            Triangle minAreaTriangle = Triangle.findMinArea(typeTriangles);
+            Triangle minPerTriangle = Triangle.findMinPer(typeTriangles);
+
+
+            System.out.println("Тип треугольника: " + type);
+            System.out.println("Количество: " + typeTriangles.size());
+            if (maxAreaTriangle != null) {
+                System.out.println("Максимальная площадь: " + maxAreaTriangle.area());
+                System.out.println("Минимальная площадь: " + minAreaTriangle.area());
+            }
+
+            if (maxPerTriangle != null) {
+                System.out.println("Максимальный периметр: " + maxPerTriangle.perimeter());
+                System.out.println("Минимальный периметр: " + minPerTriangle.perimeter());
+            }
+            System.out.println();
         }
     }
 }
+
+

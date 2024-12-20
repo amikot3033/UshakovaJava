@@ -2,7 +2,6 @@ package J2.J2C;
 
 import java.util.Random;
 
-import static J2C.J2C2.shiftMatrix;
 
 public class J2C12 {
 
@@ -15,6 +14,52 @@ public class J2C12 {
             System.out.println();
         }
         System.out.println();
+    }
+
+
+    public static int[][] shiftMatrix(int[][] matrix, String direction, int k) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int[][] shiftedMatrix = new int[rows][cols];
+
+        switch (direction.toLowerCase()) {
+            case "up":
+                for (int i = 0; i < rows; i++) {
+                    for (int j = 0; j < cols; j++) {
+                        shiftedMatrix[i][j] = matrix[(i + k) % rows][j];
+                    }
+                }
+                break;
+
+            case "down":
+                for (int i = 0; i < rows; i++) {
+                    for (int j = 0; j < cols; j++) {
+                        shiftedMatrix[i][j] = matrix[(i - k + rows) % rows][j];
+                    }
+                }
+                break;
+
+            case "left":
+                for (int i = 0; i < rows; i++) {
+                    for (int j = 0; j < cols; j++) {
+                        shiftedMatrix[i][j] = matrix[i][(j + k) % cols];
+                    }
+                }
+                break;
+
+            case "right":
+                for (int i = 0; i < rows; i++) {
+                    for (int j = 0; j < cols; j++) {
+                        shiftedMatrix[i][j] = matrix[i][(j - k + cols) % cols];
+                    }
+                }
+                break;
+
+            default:
+                throw new IllegalArgumentException("Invalid direction. Use 'up', 'down', 'left', or 'right'.");
+        }
+
+        return shiftedMatrix;
     }
 
     //12. В матрице найти минимальный элемент и переместить его на место заданного элемента путем перестановки строк и столбцов.
