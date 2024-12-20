@@ -11,7 +11,6 @@ class Line {
         this.C = C;
     }
 
-    // Точка пересечения с осью X (если существует)
     public String intersectionWithXAxis() {
         if (B == 0) {
             return "Прямая параллельна оси X.";
@@ -20,7 +19,6 @@ class Line {
         return String.format("(%.2f, 0)", x);
     }
 
-    // Точка пересечения с осью Y (если существует)
     public String intersectionWithYAxis() {
         if (A == 0) {
             return "Прямая параллельна оси Y.";
@@ -29,7 +27,6 @@ class Line {
         return String.format("(0, %.2f)", y);
     }
 
-    // Точка пересечения двух прямых (если не параллельны)
     public static String intersection(Line l1, Line l2) {
         double det = l1.A * l2.B - l2.A * l1.B;
         if (det == 0) {
@@ -40,7 +37,6 @@ class Line {
         return String.format("(%.2f, %.2f)", x, y);
     }
 
-    // Проверка параллельности двух прямых
     public static boolean areParallel(Line l1, Line l2) {
         return l1.A * l2.B == l1.B * l2.A;
     }
@@ -51,17 +47,16 @@ class Line {
     }
 
     public static void main(String[] args) {
-        // Создаем массив прямых
         Line[] lines = {
                 new Line(1, -1, -3),
                 new Line(2, -2, 5),
                 new Line(3, 3, -6),
-                new Line(0, 1, -4),  // Горизонтальная
-                new Line(1, 0, -5),  // Вертикальная
-                new Line(4, -4, 8),  // Параллельна первой
+                new Line(6, 6, -6),
+                new Line(0, 1, -4),
+                new Line(1, 0, -5),
+                new Line(4, -4, 8),
         };
 
-        // Группируем параллельные прямые
         List<List<Line>> parallelGroups = new ArrayList<>();
         Set<Line> visited = new HashSet<>();
 
@@ -81,22 +76,19 @@ class Line {
             }
         }
 
-        // Вывод групп параллельных прямых
         for (int i = 0; i < parallelGroups.size(); i++) {
             System.out.println("Группа " + (i + 1) + ":");
             for (Line line : parallelGroups.get(i)) {
-                System.out.println("  " + line);
+                System.out.println("" + line);
             }
         }
 
-        // Нахождение точек пересечения с осями координат
         for (Line line : lines) {
-            System.out.println(line);
+            System.out.println("\n" + line);
             System.out.println("  Пересечение с осью X: " + line.intersectionWithXAxis());
             System.out.println("  Пересечение с осью Y: " + line.intersectionWithYAxis());
         }
 
-        // Нахождение точек пересечения каждой пары прямых
         System.out.println("\nТочки пересечения прямых:");
         for (int i = 0; i < lines.length; i++) {
             for (int j = i + 1; j < lines.length; j++) {
