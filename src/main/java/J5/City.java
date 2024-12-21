@@ -1,8 +1,12 @@
 package J5;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class City {
 
     private String name;
+    private List<Place> places = new ArrayList<>();
 
     public City(String name) {
         this.name = name;
@@ -14,6 +18,24 @@ public class City {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Place addPlace(String type, String name){
+        Place place = new Place(type, name);
+        places.add(place);
+        return place;
+    }
+
+    public  void printPlace(){
+
+        places.stream().map(Place::getType).distinct().forEach(type ->{
+            List<Place> filtredPlaces = places.stream()
+                    .filter(place -> place.getType().equals(type)).toList();
+
+            System.out.println("\n" + type + ": " + filtredPlaces.size());
+
+            filtredPlaces.forEach(place -> System.out.println(place.getType() + " " + place.getName()));
+        });
     }
 
     public class Place {
@@ -50,14 +72,13 @@ public class City {
     public static void main(String[] args) {
         City city = new City("Коноха");
 
-        City.Place avenue = city.new Place("Проспект", "Мира");
-        City.Place street = city.new Place("Улица", "Ленина");
-        City.Place square = city.new Place("Площадь", "Победы");
+        city.addPlace("Улица", "Улица");
+        city.addPlace("Проспект", "Мира");
+        city.addPlace("Улица", "Ленина");
+        city.addPlace("Площадь", "Победы");
 
         System.out.println("Город: " + city.getName());
-        System.out.println(avenue);
-        System.out.println(street);
-        System.out.println(square);
+        city.printPlace();
     }
 }
 
