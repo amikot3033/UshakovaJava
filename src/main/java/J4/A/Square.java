@@ -91,7 +91,7 @@ class Square {
         square.printInfo();
 
         System.out.println("\nПоворот на 45 градусов:");
-        square.rotate(45);
+        square.rotate(90);
         square.printInfo();
 
         System.out.println("\nИзменение цвета на красный:");

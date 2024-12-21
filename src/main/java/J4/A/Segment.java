@@ -23,7 +23,6 @@ class Segment {
 
     public void rotate(Point center, double angle) {
         double radians = Math.toRadians(angle) / 2;
-        System.out.println(radians);
         double sin = Math.sin(radians);
         double cos = Math.cos(radians);
 
