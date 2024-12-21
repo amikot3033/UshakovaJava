@@ -1,6 +1,5 @@
 package J6;
 
-// Юнит-тесты
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,7 +23,6 @@ public class DrugManagementTest {
     public void testChangeStatus() {
         Drug drug = new Drug("Парацетамол", 500, "разрешено");
         drug.changeStatus("по рецепту");
-        // Статус проверить напрямую невозможно, но можно улучшить систему добавлением метода getStatus.
     }
 
     @Test

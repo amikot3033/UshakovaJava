@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="4">
-      <change afterPath="$PROJECT_DIR$/src/main/java/J5/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J6/Drug.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J6/DrugManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J6/Ointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J6/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J6/Tablet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J6/DrugManagementTest.java" afterDir="false" />
+    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/J6/DrugManagementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/J6/DrugManagementTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +58,7 @@
     "Application.Square.executor": "Run",
     "Application.Train.executor": "Run",
     "Application.Triangle.executor": "Run",
+    "JUnit.DrugManagementTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -127,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734739269192</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="6">
+      <option name="closed" value="true" />
+      <created>1734740639572</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734740639572</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,7 +137,8 @@
     <MESSAGE value="3th" />
     <MESSAGE value="4a" />
     <MESSAGE value="4" />
-    <option name="LAST_COMMIT_MESSAGE" value="4" />
+    <MESSAGE value="6" />
+    <option name="LAST_COMMIT_MESSAGE" value="6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
