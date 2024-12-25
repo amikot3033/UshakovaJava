@@ -4,11 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="7">
-      <change afterPath="$PROJECT_DIR$/src/test/java/J7/FileCounterTest.java" afterDir="false" />
+    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="12">
+      <change afterPath="$PROJECT_DIR$/input_program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output_directory/output_program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/Analysis.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Carriage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Locomotive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Train.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/TrainFileConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Transport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/C/RemoveExtraSpaces.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/Poem.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J10/PoemAnalyzer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J11/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J11/B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J11/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J12/Bank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J12/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J12/InsufficientFundsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J12/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J8/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J8/B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J8/C.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J9/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J9/CustomExeption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J9/numbers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J10/B/TrainTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J10/C/RemoveExtraSpacesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J10/PoemAnalyzerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J11/ATest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J11/BTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J12/BankTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J8/BTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J8/CTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J8/aTets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J9/ATest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_train.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/J7/FileCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/J7/FileCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/J7/file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/J7/file.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +50,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -50,24 +83,40 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.A.executor": "Run",
+    "Application.B.executor": "Run",
+    "Application.C.executor": "Run",
     "Application.Circle.executor": "Run",
     "Application.City.executor": "Run",
     "Application.ComplexNumber.executor": "Run",
     "Application.FileCounter.executor": "Run",
     "Application.J2C12.executor": "Run",
     "Application.Line.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.PoemAnalyzer.executor": "Run",
     "Application.Point.executor": "Run",
     "Application.Quadrilateral.executor": "Run",
+    "Application.RemoveExtraSpaces.executor": "Run",
     "Application.Square.executor": "Run",
     "Application.Train.executor": "Run",
     "Application.Triangle.executor": "Run",
+    "Application.С.executor": "Run",
+    "JUnit.ATest.executor": "Run",
+    "JUnit.ATest.testReadAndValidateNumbersInvalidLocale.executor": "Debug",
+    "JUnit.BTest.executor": "Run",
+    "JUnit.BankTest.executor": "Run",
+    "JUnit.CTest.executor": "Run",
     "JUnit.DrugManagementTest.executor": "Run",
     "JUnit.FileCounterTest.executor": "Run",
+    "JUnit.PoemAnalyzerTest.executor": "Run",
+    "JUnit.RemoveExtraSpacesTest.executor": "Run",
+    "JUnit.TrainTests.executor": "Run",
+    "JUnit.aTets.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/J3",
+    "last_opened_file_path": "C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/J10/C",
     "onboarding.tips.debug.path": "C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/org/example/Main.java"
   },
   "keyToStringList": {
@@ -78,10 +127,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J10\C" />
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\test\java\J10\C" />
       <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J3" />
       <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J2" />
       <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J2C" />
-      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="J10.C" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -157,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734749293527</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="7">
+      <option name="closed" value="true" />
+      <created>1734754163271</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734754163271</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,7 +233,12 @@
     <MESSAGE value="6test" />
     <MESSAGE value="5fix" />
     <MESSAGE value="7" />
-    <option name="LAST_COMMIT_MESSAGE" value="7" />
+    <MESSAGE value="8a" />
+    <MESSAGE value="8" />
+    <MESSAGE value="9" />
+    <MESSAGE value="11" />
+    <MESSAGE value="12" />
+    <option name="LAST_COMMIT_MESSAGE" value="12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
