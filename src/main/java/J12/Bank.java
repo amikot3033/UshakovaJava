@@ -5,7 +5,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicLong;
 
 class Bank {
-    private final BlockingQueue<Client> queue = new LinkedBlockingQueue<>();
+    final BlockingQueue<Client> queue = new LinkedBlockingQueue<>();
     private final AtomicLong cashInBank = new AtomicLong(10000);
     private final AtomicLong storage = new AtomicLong(50000);
     final int cashLimit = 20000;

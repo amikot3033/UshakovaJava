@@ -7,6 +7,15 @@ public class Main {
         Thread cashier = new Thread(bank::processClients);
         cashier.start();
 
+        Thread cashier2 = new Thread(bank::processClients);
+        cashier2.start();
+
+        Thread cashier3 = new Thread(bank::processClients);
+        cashier3.start();
+
+        Thread cashier4 = new Thread(bank::processClients);
+        cashier4.start();
+
         Thread monitor = new Thread(() -> {
             try {
                 bank.monitorCash();

@@ -163,4 +163,48 @@ class BankTest {
             System.out.println("Клиент не может снять больше, чем доступно на личном балансе.");
         }
     }
+
+    @Test
+    void testMultipleCashiersProcessingClients() throws InterruptedException {
+        Bank bank = new Bank();
+        int initialQueueSize = 10;
+        int numberOfCashiers = 3;
+
+        for (int i = 1; i <= initialQueueSize; i++) {
+            bank.addClient(new Client("Клиент " + i));
+        }
+
+        ExecutorService executor = Executors.newFixedThreadPool(numberOfCashiers);
+        for (int i = 0; i < numberOfCashiers; i++) {
+            executor.execute(bank::processClients);
+        }
+
+        Thread.sleep(3000);
+
+        executor.shutdownNow();
+
+        assertEquals(0, bank.queue.size(), "Очередь должна быть пустой после обработки всех клиентов.");
+    }
+
+    @Test
+    void testCashDepositAndWithdraw() throws InterruptedException {
+        Bank bank = new Bank();
+        int numberOfClients = 5;
+        int numberOfCashiers = 2;
+
+        for (int i = 1; i <= numberOfClients; i++) {
+            bank.addClient(new Client("Клиент " + i));
+        }
+
+        ExecutorService executor = Executors.newFixedThreadPool(numberOfCashiers);
+        for (int i = 0; i < numberOfCashiers; i++) {
+            executor.execute(bank::processClients);
+        }
+
+        executor.shutdownNow();
+
+        long bankBalance = bank.getBalance();
+        assertTrue(bankBalance >= 5000 && bankBalance <= 20000, "Баланс банка должен быть в пределах лимитов.");
+    }
+
 }
