@@ -7,19 +7,15 @@ import java.util.*;
 public class FileCounter {
 
 
-    public static int countWords(ArrayList<String> list, String word){
+    public static int CountWords(ArrayList<String> list, String word){
     return Collections.frequency(list, word);
     }
 
-    public static HashMap UniqueFric(ArrayList<String> list){
-        List<String> visited = new ArrayList<>();
-        HashMap<String, Integer> freq = new HashMap<>();
-        for (String current: list)
-        {
-            if (!visited.contains(current)){
-                visited.add(current);
-            }
-        }
+    public static Map UniqueFric(List<String> list){
+        Set<String> visited = new HashSet<>(list);
+
+        Map<String, Integer> freq = new HashMap<>();
+
         for (String item: visited)
         {
             freq.put(item, Collections.frequency(list, item));
@@ -27,8 +23,8 @@ public class FileCounter {
         return freq;
     }
 
-    public static String printRes(ArrayList list, String word){
-        HashMap<String, Integer> freq = UniqueFric(list);
+    public static String PrintRes(List list, String word){
+        Map<String, Integer> freq = UniqueFric(list);
         String res = "";
         if (freq.get(word) != null){
             return res + word + " - " + freq.get(word);
@@ -49,24 +45,18 @@ public class FileCounter {
         }
         String str;
 
-        ArrayList<String> list = new ArrayList<String>();
-        while(true){
-            try {
-                if (!((str = reader.readLine()) != null)) break;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        List<String> list = new ArrayList<String>();
+        while((str = reader.readLine()) != null) {
             if(!str.isEmpty()){
-                for (String word: str.split(" ") )
-                list.add(word);
+                Collections.addAll(list, str.split(" "));
             }
         }
 
-        HashMap<String, Integer> freq = UniqueFric(list);
+        Map<String, Integer> freq = UniqueFric(list);
 
         String[] words = new String[]{"hello", "world", "bye"};
         for (String word: words){
-            System.out.println(printRes(list, word));
+            System.out.println(PrintRes(list, word));
         }
     }
 

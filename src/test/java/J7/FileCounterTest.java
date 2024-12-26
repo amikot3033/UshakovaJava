@@ -6,17 +6,16 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 import static J7.FileCounter.UniqueFric;
-import static J7.FileCounter.printRes;
+import static J7.FileCounter.PrintRes;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FileCounterTest {
 
     @Test
-    void tetsUnuqie(){
+    void tetsUnuqie() throws IOException {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader("src/main/java/J7/file.txt"));
@@ -25,21 +24,16 @@ public class FileCounterTest {
         }
         String str;
 
-        ArrayList<String> list = new ArrayList<String>();
-        while(true){
-            try {
-                if (!((str = reader.readLine()) != null)) break;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        List<String> list = new ArrayList<String>();
+        while((str = reader.readLine()) != null) {
             if(!str.isEmpty()){
-                for (String word: str.split(" ") )
-                    list.add(word);
+                Collections.addAll(list, str.split(" "));
             }
         }
-        HashMap<String, Integer> freq = UniqueFric(list);
 
-        assertEquals("hello - 4", printRes(list, "hello"));
-        assertEquals("bye - 0", printRes(list, "bye"));
+        Map<String, Integer> freq = UniqueFric(list);
+
+        assertEquals("hello - 4", PrintRes(list, "hello"));
+        assertEquals("bye - 0", PrintRes(list, "bye"));
     }
 }
