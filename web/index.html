@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Выбор изображения</title>
+</head>
+<body>
+<h1>Выбор изображения для отправки</h1>
+<div id="content">
+</div>
+<script>
+  // Загружаем список активных пользователей и изображений
+  fetch('http://localhost:8080/')
+      .then(response => response.text())
+      .then(html => {
+          document.getElementById('content').innerHTML = html;
+      })
+      .catch(error => {
+          console.error('Ошибка загрузки:', error);
+          document.getElementById('content').innerText = 'Ошибка загрузки контента.';
+      });
+</script>
+</body>
+</html>

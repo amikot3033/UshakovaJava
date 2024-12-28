@@ -4,43 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="12">
-      <change afterPath="$PROJECT_DIR$/input_program.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output_directory/output_program.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/Analysis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Carriage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Locomotive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Train.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/TrainFileConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/B/Transport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/C/RemoveExtraSpaces.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/Poem.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J10/PoemAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J11/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J11/B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J11/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J12/Bank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J12/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J12/InsufficientFundsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J12/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J8/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J8/B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J8/C.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J9/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J9/CustomExeption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J9/numbers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J10/B/TrainTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J10/C/RemoveExtraSpacesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J10/PoemAnalyzerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J11/ATest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J11/BTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J12/BankTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J8/BTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J8/CTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J8/aTets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J9/ATest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_train.dat" afterDir="false" />
+    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="12fix">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J13/WeatherApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J13/WeatherDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J14/B/GoGameServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/J14/ImageTransferServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/go_game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/go_script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/go_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/inbox.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +30,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -81,64 +60,164 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.A.executor": "Run",
-    "Application.B.executor": "Run",
-    "Application.C.executor": "Run",
-    "Application.Circle.executor": "Run",
-    "Application.City.executor": "Run",
-    "Application.ComplexNumber.executor": "Run",
-    "Application.FileCounter.executor": "Run",
-    "Application.J2C12.executor": "Run",
-    "Application.Line.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.PoemAnalyzer.executor": "Run",
-    "Application.Point.executor": "Run",
-    "Application.Quadrilateral.executor": "Run",
-    "Application.RemoveExtraSpaces.executor": "Run",
-    "Application.Square.executor": "Run",
-    "Application.Train.executor": "Run",
-    "Application.Triangle.executor": "Run",
-    "Application.С.executor": "Run",
-    "JUnit.ATest.executor": "Run",
-    "JUnit.ATest.testReadAndValidateNumbersInvalidLocale.executor": "Debug",
-    "JUnit.BTest.executor": "Run",
-    "JUnit.BankTest.executor": "Run",
-    "JUnit.CTest.executor": "Run",
-    "JUnit.DrugManagementTest.executor": "Run",
-    "JUnit.FileCounterTest.executor": "Run",
-    "JUnit.PoemAnalyzerTest.executor": "Run",
-    "JUnit.RemoveExtraSpacesTest.executor": "Run",
-    "JUnit.TrainTests.executor": "Run",
-    "JUnit.aTets.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/J10/C",
-    "onboarding.tips.debug.path": "C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.A.executor&quot;: &quot;Run&quot;,
+    &quot;Application.B.executor&quot;: &quot;Run&quot;,
+    &quot;Application.C.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Circle.executor&quot;: &quot;Run&quot;,
+    &quot;Application.City.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ComplexNumber.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FileCounter.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GoClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GoGameServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GoServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ImageHttpServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ImageServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ImageTransferClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ImageTransferServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.J2C12.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Line.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PoemAnalyzer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Point.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Quadrilateral.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RemoveExtraSpaces.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Square.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Train.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Triangle.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WeatherApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WeatherDatabase.executor&quot;: &quot;Run&quot;,
+    &quot;Application.С.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.ATest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ATest.testReadAndValidateNumbersInvalidLocale.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BankTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BankTest.testCashDepositAndWithdraw.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BankTest.testMultipleCashiersProcessingClients.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DrugManagementTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileCounterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PoemAnalyzerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RemoveExtraSpacesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TrainTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WeatherDatabaseTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.aTets.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/J14/web&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J14\web" />
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\web" />
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J14" />
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src" />
       <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J10\C" />
-      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\test\java\J10\C" />
-      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J3" />
-      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J2" />
-      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J2C" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\web" />
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src\main\java\J14\web" />
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\web" />
       <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava" />
+      <recent name="C:\Users\huawei\IdeaProjects\UshakovaJava\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="J10.C" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GoClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="J14.B.GoClient" />
+      <module name="UshakovaJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="J14.B.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoGameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="J14.B.GoGameServer" />
+      <module name="UshakovaJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="J14.B.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="J14.B.GoServer" />
+      <module name="UshakovaJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="J14.B.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankTest.testCashDepositAndWithdraw" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UshakovaJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="J12.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="J12" />
+      <option name="MAIN_CLASS_NAME" value="J12.BankTest" />
+      <option name="METHOD_NAME" value="testCashDepositAndWithdraw" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BankTest.testMultipleCashiersProcessingClients" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UshakovaJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="J12.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="J12" />
+      <option name="MAIN_CLASS_NAME" value="J12.BankTest" />
+      <option name="METHOD_NAME" value="testMultipleCashiersProcessingClients" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GoGameServer" />
+        <item itemvalue="Application.GoClient" />
+        <item itemvalue="Application.GoServer" />
+        <item itemvalue="JUnit.BankTest.testCashDepositAndWithdraw" />
+        <item itemvalue="JUnit.BankTest.testMultipleCashiersProcessingClients" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -221,7 +300,31 @@
       <option name="project" value="LOCAL" />
       <updated>1734754163271</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="12">
+      <option name="closed" value="true" />
+      <created>1735121685852</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735121685852</updated>
+    </task>
+    <task id="LOCAL-00011" summary="7fix">
+      <option name="closed" value="true" />
+      <created>1735213040145</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735213040145</updated>
+    </task>
+    <task id="LOCAL-00012" summary="12fix">
+      <option name="closed" value="true" />
+      <created>1735217449478</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1735217449478</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -238,7 +341,9 @@
     <MESSAGE value="9" />
     <MESSAGE value="11" />
     <MESSAGE value="12" />
-    <option name="LAST_COMMIT_MESSAGE" value="12" />
+    <MESSAGE value="7fix" />
+    <MESSAGE value="12fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="12fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

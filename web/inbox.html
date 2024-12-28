@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Входящие изображения</title>
+</head>
+<body>
+<h1>Входящие изображения</h1>
+<form id="inbox-form">
+    <label for="username">Ваше имя:</label>
+    <input type="text" id="username" name="username" required>
+    <button type="submit">Проверить</button>
+</form>
+<div id="inbox-content">
+    <!-- Здесь будут отображаться входящие изображения -->
+</div>
+<script>
+    document.getElementById('inbox-form').addEventListener('submit', event => {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+
+        fetch(`http://localhost:8080/inbox?username=${encodeURIComponent(username)}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.blob();
+                } else {
+                    return response.text().then(text => {
+                        throw new Error(text);
+                    });
+                }
+            })
+            .then(blob => {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(blob);
+                document.getElementById('inbox-content').innerHTML = '';
+                document.getElementById('inbox-content').appendChild(img);
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                document.getElementById('inbox-content').innerText = error.message;
+            });
+    });
+</script>
+</body>
+</html>

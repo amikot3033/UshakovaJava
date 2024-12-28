@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Game</title>
+    <link rel="stylesheet" href="go_style.css">
+</head>
+<body>
+<header>
+    <h1>Go Game</h1>
+    <p id="current-player">Ход игрока: </p>
+</header>
+<main>
+    <div id="game-board" class="game-board"></div>
+</main>
+<footer>
+    <form id="move-form" class="move-form">
+        <label for="x">Координата X:</label>
+        <input type="number" id="x" min="0" placeholder="X coordinate" required>
+        <label for="y">Координата Y:</label>
+        <input type="number" id="y" min="0" placeholder="Y coordinate" required>
+        <button type="submit">Сделать ход</button>
+    </form>
+</footer>
+<script src="go_script.js"></script>
+</body>
+</html>
