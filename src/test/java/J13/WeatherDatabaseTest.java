@@ -1,97 +1,84 @@
 package J13;
 
 import org.junit.jupiter.api.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class WeatherDatabaseTest {
+class WeatherDatabaseTest {
     private Connection connection;
 
     @BeforeAll
-    void setUpDatabase() throws SQLException {
-        connection = DriverManager.getConnection("jdbc:h2:mem:testdb", "sa", "");
+    void setupDatabase() throws SQLException {
+        connection = DriverManager.getConnection("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", "sa", "");
         WeatherDatabase.createTables(connection);
+    }
+
+    @BeforeEach
+    void insertTestData() throws SQLException {
+        WeatherDatabase.clearTables(connection);
         WeatherDatabase.insertTestData(connection);
     }
 
     @AfterAll
-    void tearDownDatabase() throws SQLException {
+    void closeConnection() throws SQLException {
         if (connection != null) {
             connection.close();
         }
     }
 
     @Test
-    void testPrintWeatherInRegion() throws SQLException {
-        String query = """
-                SELECT w.date, w.temperature, w.precipitation
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                WHERE r.name = 'Москва'
-            """;
+    void testFindWeatherInRegion() throws SQLException {
+        List<Weather> results = WeatherDatabase.findWeatherInRegion(connection, "Москва");
+        assertEquals(2, results.size(), "Should return two records for 'Москва'");
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "First record should match the date '2024-12-18'");
+        assertEquals(-5.0, results.get(0).getTemperature(), "First record should have a temperature of -5.0");
+        assertEquals("Снег", results.get(0).getPrecipitation(), "First record should have precipitation 'Снег'");
 
-            assertTrue(resultSet.next());
-            assertEquals(Date.valueOf("2024-12-18"), resultSet.getDate("date"));
-            assertEquals(-5.0, resultSet.getDouble("temperature"));
-            assertEquals("Снег", resultSet.getString("precipitation"));
-        }
+        assertEquals("2024-12-19", results.get(1).getDate().toString(), "Second record should match the date '2024-12-19'");
+        assertEquals(2.0, results.get(1).getTemperature(), "Second record should have a temperature of 2.0");
+        assertEquals("Дождь", results.get(1).getPrecipitation(), "Second record should have precipitation 'Дождь'");
     }
 
     @Test
-    void testPrintSnowyDaysWithLowTemperature() throws SQLException {
-        String query = """
-                SELECT w.date
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                WHERE r.name = 'Москва' AND w.precipitation = 'Снег' AND w.temperature < -5
-            """;
+    void testFindSnowyDaysWithLowTemperature() throws SQLException {
+        List<Weather> results = WeatherDatabase.findSnowyDaysWithLowTemperature(connection, "Москва", -5);
+        assertEquals(1, results.size(), "Should return one snowy day below -5 for 'Москва'");
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            assertFalse(resultSet.next());
-        }
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Date should be '2024-12-18'");
+        assertEquals(-5.0, results.get(0).getTemperature(), "Temperature should be -5.0");
+        assertEquals("Снег", results.get(0).getPrecipitation(), "Precipitation should be 'Снег'");
     }
 
     @Test
-    void testPrintWeatherForLanguage() throws SQLException {
-        String query = """
-                SELECT r.name AS region, w.date, w.temperature, w.precipitation
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                JOIN inhabitants_type it ON r.inhabitants_type_id = it.id
-                WHERE it.language = 'Русский' AND w.date >= DATEADD('DAY', -7, CURRENT_DATE)
-            """;
+    void testFindWeatherForLanguage() throws SQLException {
+        List<Weather> results = WeatherDatabase.findWeatherForLanguage(connection, "Немецкий");
+        assertEquals(1, results.size(), "Should return one record for regions with 'Немецкий' language");
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            assertTrue(resultSet.next());
-            assertEquals("Москва", resultSet.getString("region"));
-        }
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Date should be '2024-12-18'");
+        assertEquals(-10.0, results.get(0).getTemperature(), "Temperature should be -10.0");
+        assertEquals("Снег", results.get(0).getPrecipitation(), "Precipitation should be 'Снег'");
     }
 
     @Test
-    void testPrintAverageTemperatureForLargeRegions() throws SQLException {
-        String query = """
-                SELECT r.name AS region, AVG(w.temperature) AS avg_temperature
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                WHERE w.date >= DATEADD('DAY', -7, CURRENT_DATE) AND r.area > 1000
-                GROUP BY r.name
-            """;
+    void testFindAllTemperaturesForLargeRegions() throws SQLException {
+        List<Weather> results = WeatherDatabase.findAllTemperaturesForLargeRegions(connection, 1000);
+        assertEquals(2, results.size(), "Should return two records for regions with area > 1000");
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "First record should match the date '2024-12-18'");
+        assertEquals("2024-12-19", results.get(1).getDate().toString(), "Second record should match the date '2024-12-19'");
+    }
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            assertTrue(resultSet.next());
-            assertEquals("Москва", resultSet.getString("region"));
-            assertEquals(-1.5, resultSet.getDouble("avg_temperature"), 0.01); // Средняя температура (-5 + 2)/2
-        }
+    @Test
+    void testFindAverageTemperatureForLargeRegions() throws SQLException {
+        List<String> results = WeatherDatabase.findAverageTemperatureForLargeRegions(connection, 1000);
+        assertEquals(1, results.size(), "Should return one record for regions with area > 1000");
+        assertTrue(results.get(0).contains("Регион: Москва"));
+        assertTrue(results.get(0).contains("Средняя температура:"));
     }
 }

@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="12fix">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J13/WeatherApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J13/WeatherDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J14/B/GoGameServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/J14/ImageTransferServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/go_game.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/go_script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/go_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/inbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/register.html" afterDir="false" />
+    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="13fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/J13/Weather.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/J13/WeatherDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/J13/WeatherDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -324,7 +314,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735217449478</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="14">
+      <option name="closed" value="true" />
+      <created>1735382067339</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1735382067339</updated>
+    </task>
+    <task id="LOCAL-00014" summary="13fix">
+      <option name="closed" value="true" />
+      <created>1735644882650</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735644882650</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -343,7 +349,9 @@
     <MESSAGE value="12" />
     <MESSAGE value="7fix" />
     <MESSAGE value="12fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="12fix" />
+    <MESSAGE value="14" />
+    <MESSAGE value="13fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="13fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
