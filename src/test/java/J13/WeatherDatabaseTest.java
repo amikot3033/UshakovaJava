@@ -1,97 +1,63 @@
 package J13;
 
 import org.junit.jupiter.api.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class WeatherDatabaseTest {
+class WeatherDatabaseTest {
     private Connection connection;
 
     @BeforeAll
-    void setUpDatabase() throws SQLException {
-        connection = DriverManager.getConnection("jdbc:h2:mem:testdb", "sa", "");
+    void setupDatabase() throws SQLException {
+        connection = DriverManager.getConnection("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", "sa", "");
         WeatherDatabase.createTables(connection);
+    }
+
+    @BeforeEach
+    void insertTestData() throws SQLException {
+        WeatherDatabase.clearTables(connection);
         WeatherDatabase.insertTestData(connection);
     }
 
     @AfterAll
-    void tearDownDatabase() throws SQLException {
+    void closeConnection() throws SQLException {
         if (connection != null) {
             connection.close();
         }
     }
 
     @Test
-    void testPrintWeatherInRegion() throws SQLException {
-        String query = """
-                SELECT w.date, w.temperature, w.precipitation
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                WHERE r.name = 'Москва'
-            """;
-
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            assertTrue(resultSet.next());
-            assertEquals(Date.valueOf("2024-12-18"), resultSet.getDate("date"));
-            assertEquals(-5.0, resultSet.getDouble("temperature"));
-            assertEquals("Снег", resultSet.getString("precipitation"));
-        }
+    void testFindWeatherInRegion() throws SQLException {
+        List<String> results = WeatherDatabase.findWeatherInRegion(connection, "Москва");
+        assertEquals(2, results.size(), "Should return two records for 'Москва'");
+        assertTrue(results.get(0).contains("Дата: 2024-12-18"));
+        assertTrue(results.get(1).contains("Дата: 2024-12-19"));
     }
 
     @Test
-    void testPrintSnowyDaysWithLowTemperature() throws SQLException {
-        String query = """
-                SELECT w.date
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                WHERE r.name = 'Москва' AND w.precipitation = 'Снег' AND w.temperature < -5
-            """;
-
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            assertFalse(resultSet.next());
-        }
+    void testFindSnowyDaysWithLowTemperature() throws SQLException {
+        List<String> results = WeatherDatabase.findSnowyDaysWithLowTemperature(connection, "Москва", -5);
+        assertEquals(1, results.size(), "Should return one snowy day below -5 for 'Москва'");
+        assertTrue(results.get(0).contains("2024-12-18"));
     }
 
     @Test
-    void testPrintWeatherForLanguage() throws SQLException {
-        String query = """
-                SELECT r.name AS region, w.date, w.temperature, w.precipitation
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                JOIN inhabitants_type it ON r.inhabitants_type_id = it.id
-                WHERE it.language = 'Русский' AND w.date >= DATEADD('DAY', -7, CURRENT_DATE)
-            """;
-
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            assertTrue(resultSet.next());
-            assertEquals("Москва", resultSet.getString("region"));
-        }
+    void testFindWeatherForLanguage() throws SQLException {
+        List<String> results = WeatherDatabase.findWeatherForLanguage(connection, "Немецкий");
+        assertEquals(1, results.size(), "Should return one record for regions with 'Немецкий' language");
+        assertTrue(results.get(0).contains("Регион: Берлин"));
     }
 
     @Test
-    void testPrintAverageTemperatureForLargeRegions() throws SQLException {
-        String query = """
-                SELECT r.name AS region, AVG(w.temperature) AS avg_temperature
-                FROM weather w
-                JOIN region r ON w.region_id = r.id
-                WHERE w.date >= DATEADD('DAY', -7, CURRENT_DATE) AND r.area > 1000
-                GROUP BY r.name
-            """;
-
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            assertTrue(resultSet.next());
-            assertEquals("Москва", resultSet.getString("region"));
-            assertEquals(-1.5, resultSet.getDouble("avg_temperature"), 0.01); // Средняя температура (-5 + 2)/2
-        }
+    void testFindAverageTemperatureForLargeRegions() throws SQLException {
+        List<String> results = WeatherDatabase.findAverageTemperatureForLargeRegions(connection, 1000);
+        assertEquals(1, results.size(), "Should return one record for regions with area > 1000");
+        assertTrue(results.get(0).contains("Регион: Москва"));
     }
 }
