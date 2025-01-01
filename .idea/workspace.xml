@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="13fix - List&lt;Weather&gt;" />
+    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="12fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -91,7 +94,7 @@
     &quot;JUnit.aTets.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/J14/web&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/huawei/IdeaProjects/UshakovaJava/src/main/java/org/example/Main.java&quot;,
@@ -196,8 +199,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GoGameServer" />
         <item itemvalue="Application.GoClient" />
+        <item itemvalue="Application.GoGameServer" />
         <item itemvalue="Application.GoServer" />
         <item itemvalue="JUnit.BankTest.testCashDepositAndWithdraw" />
         <item itemvalue="JUnit.BankTest.testMultipleCashiersProcessingClients" />
@@ -309,31 +312,7 @@
       <option name="project" value="LOCAL" />
       <updated>1735217449478</updated>
     </task>
-    <task id="LOCAL-00013" summary="14">
-      <option name="closed" value="true" />
-      <created>1735382067339</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1735382067339</updated>
-    </task>
-    <task id="LOCAL-00014" summary="13fix">
-      <option name="closed" value="true" />
-      <created>1735644882650</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1735644882650</updated>
-    </task>
-    <task id="LOCAL-00015" summary="13fix - List&lt;Weather&gt;">
-      <option name="closed" value="true" />
-      <created>1735746213814</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1735746213814</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -352,8 +331,6 @@
     <MESSAGE value="12" />
     <MESSAGE value="7fix" />
     <MESSAGE value="12fix" />
-    <MESSAGE value="14" />
-    <MESSAGE value="13fix" />
     <MESSAGE value="13fix - List&lt;Weather&gt;" />
     <option name="LAST_COMMIT_MESSAGE" value="13fix - List&lt;Weather&gt;" />
   </component>
