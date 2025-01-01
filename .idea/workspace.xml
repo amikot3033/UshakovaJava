@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="13fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/J13/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/J13/WeatherDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/J13/WeatherDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/J13/WeatherDatabaseTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="d0930273-1f91-402a-90a4-61d77c607dc1" name="Changes" comment="13fix - List&lt;Weather&gt;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -330,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735644882650</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="13fix - List&lt;Weather&gt;">
+      <option name="closed" value="true" />
+      <created>1735746213814</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735746213814</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -351,7 +354,8 @@
     <MESSAGE value="12fix" />
     <MESSAGE value="14" />
     <MESSAGE value="13fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="13fix" />
+    <MESSAGE value="13fix - List&lt;Weather&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="13fix - List&lt;Weather&gt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

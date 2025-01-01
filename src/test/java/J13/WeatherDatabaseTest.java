@@ -35,50 +35,50 @@ class WeatherDatabaseTest {
     @Test
     void testFindWeatherInRegion() throws SQLException {
         List<Weather> results = WeatherDatabase.findWeatherInRegion(connection, "Москва");
-        assertEquals(2, results.size(), "Should return two records for 'Москва'");
+        assertEquals(2, results.size(), "Должно быть возвращено два результата для региона 'Москва'");
 
-        assertEquals("2024-12-18", results.get(0).getDate().toString(), "First record should match the date '2024-12-18'");
-        assertEquals(-5.0, results.get(0).getTemperature(), "First record should have a temperature of -5.0");
-        assertEquals("Снег", results.get(0).getPrecipitation(), "First record should have precipitation 'Снег'");
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Первая запись должна соответствовать дате '2024-12-18'");
+        assertEquals(-5.0, results.get(0).getTemperature(), "Первая запись должна иметь температуру -5.0");
+        assertEquals("Снег", results.get(0).getPrecipitation(), "Первая запись должна иметь осадки 'Снег'");
 
-        assertEquals("2024-12-19", results.get(1).getDate().toString(), "Second record should match the date '2024-12-19'");
-        assertEquals(2.0, results.get(1).getTemperature(), "Second record should have a temperature of 2.0");
-        assertEquals("Дождь", results.get(1).getPrecipitation(), "Second record should have precipitation 'Дождь'");
+        assertEquals("2024-12-19", results.get(1).getDate().toString(), "Вторая запись должна соответствовать дате '2024-12-19'");
+        assertEquals(2.0, results.get(1).getTemperature(), "Вторая запись должна иметь температуру 2.0");
+        assertEquals("Дождь", results.get(1).getPrecipitation(), "Вторая запись должна иметь осадки 'Дождь'");
     }
 
     @Test
     void testFindSnowyDaysWithLowTemperature() throws SQLException {
         List<Weather> results = WeatherDatabase.findSnowyDaysWithLowTemperature(connection, "Москва", -5);
-        assertEquals(1, results.size(), "Should return one snowy day below -5 for 'Москва'");
+        assertEquals(1, results.size(), "Должен быть возвращен один снежный день с температурой ниже -5 для региона 'Москва'");
 
-        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Date should be '2024-12-18'");
-        assertEquals(-5.0, results.get(0).getTemperature(), "Temperature should be -5.0");
-        assertEquals("Снег", results.get(0).getPrecipitation(), "Precipitation should be 'Снег'");
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Дата должна быть '2024-12-18'");
+        assertEquals(-5.0, results.get(0).getTemperature(), "Температура должна быть -5.0");
+        assertEquals("Снег", results.get(0).getPrecipitation(), "Осадки должны быть 'Снег'");
     }
 
     @Test
     void testFindWeatherForLanguage() throws SQLException {
         List<Weather> results = WeatherDatabase.findWeatherForLanguage(connection, "Немецкий");
-        assertEquals(1, results.size(), "Should return one record for regions with 'Немецкий' language");
+        assertEquals(1, results.size(), "Должен быть возвращен один результат для регионов с языком 'Немецкий'");
 
-        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Date should be '2024-12-18'");
-        assertEquals(-10.0, results.get(0).getTemperature(), "Temperature should be -10.0");
-        assertEquals("Снег", results.get(0).getPrecipitation(), "Precipitation should be 'Снег'");
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Дата должна быть '2024-12-18'");
+        assertEquals(-10.0, results.get(0).getTemperature(), "Температура должна быть -10.0");
+        assertEquals("Снег", results.get(0).getPrecipitation(), "Осадки должны быть 'Снег'");
     }
 
     @Test
     void testFindAllTemperaturesForLargeRegions() throws SQLException {
         List<Weather> results = WeatherDatabase.findAllTemperaturesForLargeRegions(connection, 1000);
-        assertEquals(2, results.size(), "Should return two records for regions with area > 1000");
-        assertEquals("2024-12-18", results.get(0).getDate().toString(), "First record should match the date '2024-12-18'");
-        assertEquals("2024-12-19", results.get(1).getDate().toString(), "Second record should match the date '2024-12-19'");
+        assertEquals(2, results.size(), "Должно быть возвращено два результата для регионов с площадью > 1000");
+        assertEquals("2024-12-18", results.get(0).getDate().toString(), "Первая запись должна соответствовать дате '2024-12-18'");
+        assertEquals("2024-12-19", results.get(1).getDate().toString(), "Вторая запись должна соответствовать дате '2024-12-19'");
     }
 
     @Test
     void testFindAverageTemperatureForLargeRegions() throws SQLException {
         List<String> results = WeatherDatabase.findAverageTemperatureForLargeRegions(connection, 1000);
-        assertEquals(1, results.size(), "Should return one record for regions with area > 1000");
-        assertTrue(results.get(0).contains("Регион: Москва"));
-        assertTrue(results.get(0).contains("Средняя температура:"));
+        assertEquals(1, results.size(), "Должен быть возвращен один результат для регионов с площадью > 1000");
+        assertTrue(results.get(0).contains("Регион: Москва"), "Результат должен содержать 'Регион: Москва'");
+        assertTrue(results.get(0).contains("Средняя температура:"), "Результат должен содержать 'Средняя температура:'");
     }
 }

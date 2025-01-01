@@ -39,7 +39,7 @@ public class Weather {
 
     @Override
     public String toString() {
-        return String.format("Дата: %s, Температура: %.1f, Осадки: %s", date, temperature, precipitation);
+        return String.format("Дата: %s, Температура: %.1f, Осадки: %s.", date, temperature, precipitation);
     }
 }
 

@@ -9,7 +9,7 @@ public class WeatherApp {
 
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
-            System.out.println("Connected to H2 database!");
+            System.out.println("Connected to H2 database!!!");
 
             String query = """
             SELECT w.date, w.temperature, w.precipitation
